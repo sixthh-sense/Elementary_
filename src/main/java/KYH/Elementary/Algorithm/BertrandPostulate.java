@@ -5,7 +5,7 @@ import java.util.Scanner;
 // https://www.acmicpc.net/problem/4948
 public class BertrandPostulate {
 
-    // 전체 맵(2n 최대값 246912)
+    // 전체 맵(2n 최대값 246912) 참고 사이트: https://st-lab.tistory.com/85 (이 문제는 개념부터 시작해서 모르는 게 많았음)
     public static boolean[] prime = new boolean[246913];
 
     public static void main(String[] args) {

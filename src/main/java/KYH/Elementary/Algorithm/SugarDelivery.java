@@ -11,6 +11,7 @@ public class SugarDelivery {
 
         Scanner sc = new Scanner(System.in);
         int kg = sc.nextInt();
+
         int count = 0;
 
         while (kg > 2) { // 5의 배수 뭉텅이로 빼고 3씩 빼기 -> 3을 빼야 하니 2이하로 떨어지면 안 됨. 반복문 조건화
