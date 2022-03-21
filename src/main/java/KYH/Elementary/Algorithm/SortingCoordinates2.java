@@ -12,7 +12,7 @@ public class SortingCoordinates2 {
         int N = sc.nextInt();
 
         // 1줄마다 좌표 1개씩 옴 -> A B 식. A가 i번째 줄의 0번째 index, B가 i번째 줄의 1번째 index
-        // 0, 1 포괄해야 하니 [][] 뒤쪽 사이즈는 2로.
+        // 0, 1 포괄해야 하니 [][] 뒤쪽 사이즈는 2로. -> 길이가 2이고 높이가 N인 직사각형을 좌표 map화한다고 생각하면 쉬움
         int[][] arr = new int[N][2];
 
         for(int i = 0; i < N; i++) {
