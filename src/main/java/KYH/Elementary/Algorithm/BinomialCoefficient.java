@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 // 참고 사이트: https://st-lab.tistory.com/159 여기서 설명하는 파스칼의 법칙 -> 재귀 이용해서 해보자
+// 파스칼의 법칙: (n+1)C(r+1) = nCr + nC(r+1)
 // https://www.acmicpc.net/problem/11050
 public class BinomialCoefficient {
     public static void main(String[] args) throws IOException {
