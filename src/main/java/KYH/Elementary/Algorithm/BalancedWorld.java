@@ -17,14 +17,12 @@ public class BalancedWorld {
             }
             bw.write(balance(sentence) + "\n");
         }
-
         bw.flush();
         br.close();
         bw.close();
     }
 
     public static String balance(String s) {
-
         char[] set = new char[s.length()];
         int size = 0;
 

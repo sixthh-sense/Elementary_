@@ -20,14 +20,13 @@ public class StackSequence {
             int value = Integer.parseInt(br.readLine());
 
             if (value > start) {
-                for (int j = start + 1; j < value + 1; j++) {
+                for (int j = start + 1; j <= value; j++) {
                     set[index++] = j;
                     //bw.write("+" + "\n");
                     sb.append("+\n");
                 }
                 start = value; // 다음 오름차순 유지용
             }
-
             if (set[index -1] == value) {
                 index -= 1;
                 //bw.write("-" + "\n");
