@@ -17,8 +17,8 @@ public class LostBrackets {
         for (int i = 0; i < cal.length; i++) {
             int sum = 0;
             String[] cal2 = cal[i].split("\\+");
-            for (int j = 0; j < cal2.length; j++) {
-                sum += Integer.parseInt(cal2[j]);
+            for (String s : cal2) {
+                sum += Integer.parseInt(s);
             }
             if (i == 0) {
                 res += sum;
