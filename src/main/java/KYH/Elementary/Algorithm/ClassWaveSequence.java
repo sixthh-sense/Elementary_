@@ -18,7 +18,7 @@ public class ClassWaveSequence {
         StringBuilder sb = new StringBuilder();
 
         // 초기값 세팅
-        dp[0] = 0L; // 사실 얘까지 할 필요 있을까 싶다가도 null값 따지니 지정해줘야 할 듯
+        dp[0] = 0L; // 사실 얘까지 할 필요 있을까 싶다가도 null값 따지니 지정해줘야 할 듯(엄밀히는 소환될 새가 없는 문장?)
         dp[1] = 1L;
         dp[2] = 1L;
         dp[3] = 1L;
