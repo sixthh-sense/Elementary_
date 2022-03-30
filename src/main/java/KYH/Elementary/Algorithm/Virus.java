@@ -24,9 +24,9 @@ public class Virus { // 링크가 있으면 그냥 걸리는 형태의 바이러
         line = Integer.parseInt(br.readLine());
 
         // 연결이 되었는지 여부
-        arr = new int[node+1][node+1];
+        arr = new int[node + 1][node + 1];
         // 바이러스 걸린 상태 여부
-        check = new boolean[node+1];
+        check = new boolean[node + 1];
 
         // 연결(링크) 정보
         for(int i = 0 ; i < line ; i ++) {
