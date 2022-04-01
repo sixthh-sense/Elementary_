@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 // https://st-lab.tistory.com/137
 // https://www.acmicpc.net/problem/11053
 // LIS 개념(최장 증가 부분 수열)
-public class TheLongestIncreasingPartSequence {
+public class TheLongestIncreasingSubSequence {
     static int[] seq; // 문제에서 주어진 값 입력용
     static int[] dp; // 각 수열의 길이 입력용, null값 넣어주려고 Integer
 

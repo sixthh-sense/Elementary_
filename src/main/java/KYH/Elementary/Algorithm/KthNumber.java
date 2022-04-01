@@ -4,7 +4,7 @@ import java.io.*;
 
 // https://jackpot53.tistory.com/33(upper/lower bound)
 // https://minhamina.tistory.com/127 (이진 탐색 설명)
-// https://moonsbeen.tistory.com/233, https://st-lab.tistory.com/281
+// https://moonsbeen.tistory.com/233, https://st-lab.tistory.com/281 (lower bound를 써주는 이유까지 설명)
 // https://www.acmicpc.net/problem/1300
 public class KthNumber {
     public static void main(String[] args) throws IOException {
