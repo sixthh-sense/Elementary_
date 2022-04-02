@@ -32,9 +32,9 @@ public class TheLongestIncreasingSubSequence2 { // 1과 비교했을 때 수열 
             else list.set(binarySearch(target, 0, list.size() - 1), target);
         }
 
-        for (int target : list) {
-            System.out.println(target);
-        }
+//        for (int target : list) {
+//            System.out.println(target);
+//        }
 
         bw.write((list.size() - 1) + "");
         bw.flush();

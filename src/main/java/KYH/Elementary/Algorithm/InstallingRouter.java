@@ -29,7 +29,7 @@ public class InstallingRouter {
         Arrays.sort(house);
 
         int low = 1; // 최소 거리(최소값)
-        int high = house[N -1] - house[0]; // 최소 거리(최대값) -> 위치 정보라서 1을 더해줘야 함
+        int high = house[N -1] - house[0]; // 최소 거리(최대값)
         int answer = 0;
 
         while (low <= high) { // canInstall(mid) == M 이라고 해도 되지 않을까? ... 값이 다르게 나오네.
@@ -37,13 +37,12 @@ public class InstallingRouter {
            int mid = (low + high) / 2;
             // 공유기 설치 가능 대수 구하는 함수
             if (canInstall(mid) < M) { // 간격: 전체 거리의 0.5로 안 되면 -> 0.25(공유기 수가 너무 적음) 혹은 0.75(공유기 수가 너무 많음) 식으로 계속 실험해가며 탐색
-                high = mid - 1;
+                high = mid - 1; // 간격 좁히기
             } else {
-                low = mid + 1;
+                low = mid + 1; // 간격 넓히기
                 answer = mid;
             }
         }
-
         bw.write(answer + ""); // mid를 적고 싶었으나 반복문 마지막 단계가 제대로 적용이 안 되는 듯해서 별도의 변수 생성해 입력. high + 1는 답이 아니지만 low - 1 는 답 ok. else 부분이 중요하네(?)
         bw.flush();
         bw.close();

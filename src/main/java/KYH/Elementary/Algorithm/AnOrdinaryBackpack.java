@@ -3,6 +3,7 @@ package KYH.Elementary.Algorithm;
 import java.io.*;
 import java.util.StringTokenizer;
 
+// knapsack algorithm : https://fbtmdwhd33.tistory.com/60
 // https://st-lab.tistory.com/141
 // https://www.acmicpc.net/problem/12865
 public class AnOrdinaryBackpack { // 어렵다... 특히 식으로 바꿀 때
@@ -15,7 +16,7 @@ public class AnOrdinaryBackpack { // 어렵다... 특히 식으로 바꿀 때
 
         int[] W = new int[N];
         int[] V = new int[N];
-        int[] dp = new int[K + 1]; // 담기로 결정한 가치
+        int[] dp = new int[K + 1]; // 담기로 결정한 가치 -> 무게만큼의 한계를 지녔으니 size는 K + 1(index = K 값 쓰기 위함)
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine(), " ");
@@ -26,9 +27,9 @@ public class AnOrdinaryBackpack { // 어렵다... 특히 식으로 바꿀 때
         for (int i = 0; i < N; i++) {
             for (int j = K; j >= W[i]; j--) { // 무게 제한은 W[i] 이상 K 미만, 빼면서 찾는다.
                 dp[j] = Math.max(dp[j], dp[j - W[i]] + V[i]); // dp[j - W[i]] + V[i] -> 무게와 가치 tradeoff
+                System.out.println(dp[j]);
             }
         }
-        System.out.println(W[0]);
         bw.write(dp[K] + "");
         bw.flush();
         bw.close();

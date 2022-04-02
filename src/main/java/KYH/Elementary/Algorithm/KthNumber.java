@@ -47,16 +47,13 @@ public class KthNumber {
 //                low = (int) (mid + 1);
 //            }
 //        }
-
         // #1
         bw.write(low + "");
         // #2
         //bw.write(answer + "");
-
         bw.flush();
         bw.close();
         br.close();
-
     }
 
 

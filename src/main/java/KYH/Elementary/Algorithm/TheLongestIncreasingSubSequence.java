@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 // LIS 개념(최장 증가 부분 수열)
 public class TheLongestIncreasingSubSequence {
     static int[] seq; // 문제에서 주어진 값 입력용
-    static int[] dp; // 각 수열의 길이 입력용, null값 넣어주려고 Integer
+    static int[] dp; // 각 수열의 길이 입력용
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -43,9 +43,10 @@ public class TheLongestIncreasingSubSequence {
 		}
         * */
 
-        // 내림차순 정렬
+        // 오름차순 정렬
         Arrays.sort(dp);
 
+        // 맨 마지막 항목(최대값)
         bw.write(dp[N-1] + "");
 //        bw.write(Arrays.toString(dp) + "");
         bw.flush();
@@ -55,10 +56,10 @@ public class TheLongestIncreasingSubSequence {
 
     static int LIS(int N) { // 각 인덱스별 "최장수열"의 길이 구하기
         if (dp[N] == 0) { // int[] 초기값은 0
-            dp[N] = 1;
-
+            dp[N] = 1; // 각 인덱스별 "기본적인 길이"는 1이겠지. 일단 원소가 1개는 있으니까.
             for (int i = N - 1; i >= 0; i--) {
-                if (seq[i] < seq[N]) {
+                if (seq[i] < seq[N]) { // 증가하는 형태가 나올 때마다 ( N - 1, N을 먼저 비교해야 하니까 N - 1부터 감소하는 형태 )
+                    // N번째 인덱스의 최종 수열의 길이 = 최대값 구하기(dp[N], LIS(N-1) + 1)
                     dp[N] = Math.max(dp[N], LIS(i) + 1); // 비교군으로 LIS(i) + 1을 삼는 이유: LIS(i) 단계에서도 착실히 누적된 길이를 구해왔으니까, "다음 단계"에선 1만 더해주면 ok
                 }
             }
