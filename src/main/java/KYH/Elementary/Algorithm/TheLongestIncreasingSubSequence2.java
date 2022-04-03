@@ -26,24 +26,25 @@ public class TheLongestIncreasingSubSequence2 { // 1과 비교했을 때 수열 
         }
 
         list = new Stack<>(); // 답안에 쓸 녀석
-        list.add(0); // empty 피하기 위함
-        for (int target : Ai) {
+        list.add(0); // empty 피하기 위함 && "맨 처음" 비교할 대상이 필요
+        for (int target : Ai) { // 이렇게 해도 초항부터 "순서대로" 탐색 가능
             if (list.peek() < target) list.add(target);
-            else list.set(binarySearch(target, 0, list.size() - 1), target);
+            // 완벽한 LIS 방식은 아님. 하지만 최장 수열의 개수만 구하는 문제이기에 이런 식으로 해도 상관은 없음
+            else list.set(binarySearch(target, 0, list.size() - 1), target); // 0 10 20일 때 5가 있다 치면 0 5 20으로 바뀌는 식
         }
 
 //        for (int target : list) {
 //            System.out.println(target);
 //        }
 
-        bw.write((list.size() - 1) + "");
+        bw.write((list.size() - 1) + ""); // 맨 앞자리에 0을 더해줘서 그 부분 뺌
         bw.flush();
         bw.close();
         br.close();
     }
 
     static int binarySearch(int target, int low, int high) {
-        while (low < high) {
+        while (low < high) { // lower-bound
             int mid = (low + high) / 2;
             if (target <= list.get(mid))  {
                 high = mid;
