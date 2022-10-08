@@ -25,7 +25,22 @@ public class NumberOfStepsToReduceANumberToZero_1342 {
                 num -= 1;
                 answer++;
             }
+            // 여기에 answer++;를 공통격으로 써도 ok
         }
         return answer;
     }
+
+    /* bitmask approach
+    public static int numberOfSteps(int num) {
+        int answer = 0;
+        while (num > 0) {
+            if ((num & 1) == 0) {
+                num >>= 1;
+            } else {
+                num--;
+            }
+            answer++;
+        }
+        return answer;
+    }*/
 }
