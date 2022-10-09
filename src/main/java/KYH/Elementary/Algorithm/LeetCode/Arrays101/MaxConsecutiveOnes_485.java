@@ -26,6 +26,7 @@ public class MaxConsecutiveOnes_485 {
             maxRecord = Math.max(maxRecord, count = (num == 0 ? 0 : count + 1));
         }
         return maxRecord; */
+        // 출처: https://leetcode.com/problems/max-consecutive-ones/discuss/96715/Easy-Java-Solution
         for (int i = 0; i < nums.length; i++) { // enhanced for문을 사용했는데 runtime 증가?
             if (nums[i] == 1) {
                 count++;
