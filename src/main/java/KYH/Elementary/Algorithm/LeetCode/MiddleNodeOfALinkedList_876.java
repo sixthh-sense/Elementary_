@@ -1,6 +1,6 @@
 package KYH.Elementary.Algorithm.LeetCode;
 
-public class MiddleOfTheLinkedList_876 {
+public class MiddleNodeOfALinkedList_876 {
     /* ListNode에서 ListNode로 출력해야 하기 때문에 문제에 제시된 ListNode class 형태를 잘 이해해야 함
     * ArrayList 등으로 index 값을 따로 구하기보다는 어떤 node에서 시작하는 ListNode를 출력할 건지 고려
     */
