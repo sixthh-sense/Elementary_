@@ -1,4 +1,4 @@
-package KYH.Elementary.Algorithm.LeetCode;
+package KYH.Elementary.Algorithm.LeetCode.Tutorial;
 
 public class MiddleNodeOfALinkedList_876 {
     /* ListNode에서 ListNode로 출력해야 하기 때문에 문제에 제시된 ListNode class 형태를 잘 이해해야 함

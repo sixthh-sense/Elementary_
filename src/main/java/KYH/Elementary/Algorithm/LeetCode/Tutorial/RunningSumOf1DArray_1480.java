@@ -1,4 +1,4 @@
-package KYH.Elementary.Algorithm.LeetCode;
+package KYH.Elementary.Algorithm.LeetCode.Tutorial;
 
 import java.util.Arrays;
 
