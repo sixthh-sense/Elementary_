@@ -15,7 +15,7 @@ public class RansomNote_383 {
     }
     public static boolean canConstruct(String ransomNote, String magazine) {
         // time complexity: O(m), space complexity: O(1) - 알파벳 수, 상수
-        // HashMap 말고도 int[] 로도 가능할 듯(원리는 동일) (참고 사이트: https://ifuwanna.tistory.com/363)
+        // HashMap 말고도 int[] 로도 가능할 듯(원리는 동일) (참고 사이트: https://ifuwanna.tistory.com/363) magazine.charAt(i)-'a'
         HashMap<Character, Integer> magazineLetters = new HashMap<>();
         for (int i = 0; i < magazine.length(); i++) {
             char m = magazine.charAt(i);
