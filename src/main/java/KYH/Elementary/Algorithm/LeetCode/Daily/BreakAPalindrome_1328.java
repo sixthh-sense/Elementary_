@@ -1,4 +1,4 @@
-package KYH.Elementary.Algorithm.LeetCode;
+package KYH.Elementary.Algorithm.LeetCode.Daily;
 
 public class BreakAPalindrome_1328 {
     public static void main(String[] args) {
