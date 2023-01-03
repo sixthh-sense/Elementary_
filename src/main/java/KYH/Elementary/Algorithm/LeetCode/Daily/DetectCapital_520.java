@@ -16,7 +16,7 @@ public class DetectCapital_520 {
     * A - Z : 65 - 90
     * */
     public static void main(String[] args) {
-        String word = "usa"; // FlaG -> false
+        String word = "cOreA"; // FlaG -> false
         long startTime = System.nanoTime();
         System.out.println(detectCapitalUse(word)); // should be true
         long estimate = System.nanoTime() - startTime;
