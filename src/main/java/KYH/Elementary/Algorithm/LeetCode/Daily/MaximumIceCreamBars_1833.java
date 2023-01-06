@@ -42,7 +42,7 @@ public class MaximumIceCreamBars_1833 {
         int answer = 0;
         for (int cost : costs) {
             if (coins - cost >= 0) {
-                coins = coins - cost;
+                coins -= cost;
                 answer += 1;
             } else {
                 break;
