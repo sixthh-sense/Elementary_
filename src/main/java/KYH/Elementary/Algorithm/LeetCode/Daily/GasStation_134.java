@@ -14,6 +14,11 @@ n == gas.length == cost.length
 1 <= n <= 105
 0 <= gas[i], cost[i] <= 104
 * */
+
+/* 풀이 '참고' 사이트 주소
+link1: https://ifuwanna.tistory.com/361
+link2: https://velog.io/@yzl1015/LeetCode-134.-Gas-Station
+* */
 public class GasStation_134 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -46,7 +51,7 @@ public class GasStation_134 {
             toLoc += (gas[i] - cost[i]);
             if (curLoc < 0) {
                 curLoc = 0;
-                answer += 1;
+                answer = i + 1;
             }
         }
         return (toLoc < 0) ? -1 : answer;
