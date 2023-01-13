@@ -11,14 +11,14 @@ public class NumberOfNodesInTheSubTreeWithTheSameLabel_1519 {
     // official solution link: I'm just uploading the link now but I should swirl it into my brain later time
     // https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/solutions/2864718/number-of-nodes-in-the-sub-tree-with-the-same-label/?orderBy=most_votes
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int n = 7;
         int[][] edges = {{0, 1}, {0, 2}, {1, 4}, {1, 5}, {2, 3}, {2, 6}};
         String labels = "abaedcd";
         System.out.println(Arrays.toString(countSubTrees(n, edges, labels)));
-    }
+    }*/
 
-    public static int[] countSubTrees(int n, int[][] edges, String labels) {
+    public int[] countSubTrees(int n, int[][] edges, String labels) {
         Map<Integer, List<Integer>> adj = new HashMap<>(); // Integer: n번째 node, List<Integer>: 그 n번째 node에 해당하는 subtree 목록
         for (int[] edge : edges) {
             int a = edge[0], b = edge[1];
@@ -36,7 +36,7 @@ public class NumberOfNodesInTheSubTreeWithTheSameLabel_1519 {
 
     // node, parent -> child, node
     // subtree 목록을 가져왔으니 본인 포함 subtree 중에서 "문자열"이 같은 개수 목록 구하기(인덱스 오름차순)
-    public static int[] dfs(int node, int parent, Map<Integer, List<Integer>> adj, char[] labels, int[] ans) {
+    public int[] dfs(int node, int parent, Map<Integer, List<Integer>> adj, char[] labels, int[] ans) {
         int[] nodeCounts = new int[26]; // alphabets
         nodeCounts[labels[node] - 'a'] = 1; // 1개씩 센다
 
