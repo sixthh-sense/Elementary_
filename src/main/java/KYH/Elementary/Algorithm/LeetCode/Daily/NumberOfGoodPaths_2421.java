@@ -43,32 +43,39 @@ public class NumberOfGoodPaths_2421 {
         if (count == 1) {
             return count;
         } else if (count == 2) {
-            if (vals[0] == vals[1]) {
-                return count + 1;
-            }
+            return (vals[0] == vals[1]) ? count + 1 : count;
         }
-        Map<Integer, List<Integer>> neighbors = new HashMap<>();
+        Map<Integer, List<Integer>> neighbors = new HashMap<>(); // 인접 인덱스 쌍방향 매핑
         for (int[] point : edges) {
             int x = point[0], y = point[1];
             neighbors.computeIfAbsent(x, value -> new ArrayList<>()).add(y);
             neighbors.computeIfAbsent(y, value -> new ArrayList<>()).add(x);
         }
-        TreeMap<Integer, List<Integer>> nodeValues = new TreeMap<>();
-        for (int i = 0; i < count; i++) {
+        System.out.println(neighbors);
+        TreeMap<Integer, List<Integer>> nodeValues = new TreeMap<>(); //
+        for (int i = 0; i < count; i++) { // 0번째 인덱스 값 - 0번째 인덱스 값과 동일한 값을 가진 인덱스들
             nodeValues.computeIfAbsent(vals[i], value -> new ArrayList<>()).add(i);
         }
+        System.out.println(nodeValues);
 
-        UnionFind uf = new UnionFind(count);
+        UnionFind uf = new UnionFind(count); // parent, rank 초기닶 (node수만큼 있음, parent는 인덱스)
+        System.out.println(uf.toString());
         int answer = 0;
 
         for (int value : nodeValues.keySet()) {
-            for (int node : nodeValues.get(value)) {
+            System.out.println(nodeValues.keySet() + ", " + value);
+            for (int node : nodeValues.get(value)) { // value - 인덱스 작은 순부터 검사
+                System.out.println(nodeValues.get(value) + ", " + node);
                 if (!neighbors.containsKey(node)) {
+                    System.out.println(node + "continue");
                     continue;
                 }
                 for (int neighbor : neighbors.get(node)) {
+                    System.out.println(neighbors.get(node) + ", " + neighbor);
                     if (vals[node] >= vals[neighbor]) {
+                        System.out.println("node: " + vals[node] + ", neighbor: " + vals[neighbor]);
                         uf.union_set(node, neighbor);
+                        System.out.println("union_set: " + uf.toString());
                     }
                 }
             }
@@ -86,7 +93,7 @@ public class NumberOfGoodPaths_2421 {
         }
         return answer;
     }
-    public static class UnionFind {
+    public static class UnionFind { //  union-by-rank(참고 링크: https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html
         int[] parent;
         int[] rank;
 
@@ -96,6 +103,11 @@ public class NumberOfGoodPaths_2421 {
                 parent[i] = i;
             }
             rank = new int[size];
+        }
+
+        @Override
+        public String toString() {
+            return "parent: " + Arrays.toString(parent) + "\nrank: " + Arrays.toString(rank);
         }
 
         public int find(int x) {
