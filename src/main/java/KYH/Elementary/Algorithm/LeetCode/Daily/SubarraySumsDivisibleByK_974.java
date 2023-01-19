@@ -10,13 +10,7 @@ public class SubarraySumsDivisibleByK_974 {
     // quotinent: 몫
     // remainder: 나머지
 
-    public static void main(String[] args) {
-        int[] nums = {4,5,0,-2,-3,1};
-        int k = 5;
-        System.out.println(subarraysDivByK(nums, k));
-    }
-    public static int subarraysDivByK(int[] nums, int k) {
-        int n = nums.length;
+    public int subarraysDivByK(int[] nums, int k) {
         int prefixMod = 0, result = 0;
 
         // There are k mod groups 0...k-1.
@@ -33,6 +27,7 @@ public class SubarraySumsDivisibleByK_974 {
             System.out.println("result: " + result);
             modGroups[prefixMod]++;
             System.out.println("modGroups_update: " + Arrays.toString(modGroups));
+            System.out.println("--------------------------------------------------------------------------");
         }
 
         System.out.println("modGroups_complete: " + Arrays.toString(modGroups));
