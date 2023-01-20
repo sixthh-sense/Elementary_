@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class NonDecreasingSubsequences491Test {
 
     @Test
-    void case1() {
+    void case1() { // 순서가 다르다고 틀리게 처리됨;; 보완 방법 생각하기
         int[] nums = {4, 6, 7, 7};
         List<List<Integer>> expected = new ArrayList<>(Arrays.asList(Arrays.asList(4, 6), Arrays.asList(4, 6, 7), Arrays.asList(4, 6, 7, 7), Arrays.asList(4, 7), Arrays.asList(4, 7, 7), Arrays.asList(6, 7), Arrays.asList(6, 7, 7), Arrays.asList(7, 7))) ;
         List<List<Integer>> actual = NonDecreasingSubsequences_491.findSubsequences(nums);
