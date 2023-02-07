@@ -31,6 +31,10 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
+test {
+	useJUnitPlatform()
+}
+
 //tasks.named('test') {
 //	useJUnitPlatform()
 //
@@ -38,6 +42,3 @@ dependencies {
 //	include "**/*Test.class" // whatever Ant pattern matches your test class files
 //}
 
-test {
-	useJUnitPlatform()
-}
